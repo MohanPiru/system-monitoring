@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(51, 144, 178);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f31e1e; /* Red */
+  color: rgb(11, 6, 6);
+  margin-bottom: 1px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
