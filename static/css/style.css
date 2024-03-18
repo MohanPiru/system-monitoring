@@ -1,11 +1,12 @@
 body {
-  background-color: rgb(51, 144, 178);
+  background-color: rgb(39, 165, 211); 
 }
 
 h1 {
   color: rgb(255, 255, 255);
   text-align: center;
 }
+
 
 p {
   font-family: verdana;
