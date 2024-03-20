@@ -1,23 +1,30 @@
+
 body {
-  background-color: rgb(39, 165, 211); 
+  background-color: rgb(38, 51, 56); 
 }
 
 h1 {
   color: rgb(255, 255, 255);
   text-align: center;
+  height: 6px;
 }
 
+.output h3 {
+  text-align: center;
+  color: #eae028;
+}
 
-p {
-  font-family: verdana;
-  font-size: 20px;
+#cpu-gauge, #disk-gauge, #mem-gauge {
+  padding: 4px;
 }
 
 /* The alert message box */
 .alert {
-  padding: 20px;
+  padding: 12px;
+  width: 400px;
   background-color: #f31e1e; /* Red */
-  color: rgb(11, 6, 6);
+  color: rgb(14, 14, 15);
+  margin-top: 4px;
   margin-bottom: 1px;
 }
 
@@ -37,3 +44,4 @@ p {
 .closebtn:hover {
   color: black;
 }
+

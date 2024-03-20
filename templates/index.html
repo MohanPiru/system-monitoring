@@ -3,6 +3,7 @@
 <head>
     <title>System Monitoring</title>
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css"/>
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
         .plotly-graph-div {
@@ -15,11 +16,23 @@
     
 </head>
 <body>
-    <div class="container">
-        <h1>System Monitoring</h1>
-        <div id="cpu-gauge"></div>
-        <div id="mem-gauge"></div>
-        <div id="disk-gauge"></div>
+    <h1>System Monitoring</h1>
+    
+    <div style="text-align: right;">
+        <a  href="http://www.linkedin.com/in/pirumohan-mandal-556668222" target="_main">
+            <button style="background-color: aqua; border-radius: 5px;">Contact</button>
+        </a>
+    </div>
+        
+    <div id="cpu-gauge" style="margin-right: 17px;"></div>
+    <div id="mem-gauge"></div>
+    <div id="disk-gauge"></div>
+   
+    <div class="output">
+        <h3>Operating System :  <button>{{os}}</button>  </h3>
+        <h3>Processor's Information : <button>{{processor}}</button></h3>
+        <h3>Number of CPUs : <button>{{cpu_count}}</button></h3>
+        <!-- <h3>Disk Partitions : <button>{{disk_partitions}}</button></h3> -->
     </div>
 
     {% if message1 %}
@@ -43,8 +56,9 @@
     </div>
     {% endif %}
 
-    
+
     <script>
+
         var cpuGauge = {
             type: "indicator",
             mode: "gauge+number",
@@ -56,12 +70,12 @@
                 borderwidth: 2,
                 bordercolor: "#ccc",
                 steps: [
-                    { range: [0, 50], color: "#d9f0a3" },
-                    { range: [50, 85], color: "#ffeb84" },
-                    { range: [85, 100], color: "#ff5f5f" }
+                    { range: [0, 40], color: "#25CC00" },
+                    { range: [40, 80], color: "E6DC15" },
+                    { range: [80, 100], color: "#EC1414" }
                 ],
                 threshold: {
-                    line: { color: "red", width: 4 },
+                    line: { color: "black", width: 4 },
                     thickness: 0.75,
                     value: {{ cpu_metric }}
                 }
@@ -79,12 +93,12 @@
                 borderwidth: 2,
                 bordercolor: "#ccc",
                 steps: [
-                    { range: [0, 50], color: "#d9f0a3" },
-                    { range: [50, 85], color: "#ffeb84" },
-                    { range: [85, 100], color: "#ff5f5f" }
+                    { range: [0, 40], color: "#25CC00" },
+                    { range: [40, 80], color: "E6DC15" },
+                    { range: [80, 100], color: "#EC1414" }
                 ],
                 threshold: {
-                    line: { color: "red", width: 4 },
+                    line: { color: "black", width: 4 },
                     thickness: 0.75,
                     value: {{ mem_metric }}
                 }
@@ -102,20 +116,20 @@
                 borderwidth: 2,
                 bordercolor: "#ccc",
                 steps: [
-                    { range: [0, 50], color: "#d9f0a3" },
-                    { range: [50, 85], color: "#ffeb84" },
-                    { range: [85, 100], color: "#ff5f5f" }
+                    { range: [0, 40], color: "#25CC00" },
+                    { range: [40, 80], color: "E6DC15" },
+                    { range: [80, 100], color: "#EC1414" }
                 ],
                 threshold: {
-                    line: { color: "red", width: 4 },
+                    line: { color: "black", width: 4 },
                     thickness: 0.75,
                     value: {{ disk_metric }}
                 }
             }
         };
         
-        var cpuGaugeLayout = { title: "CPU Utilization" };
-        var memGaugeLayout = { title: "Memory Utilization" };
+        var cpuGaugeLayout = { title: "CPU Utilization"};
+        var memGaugeLayout = { title: "Memory Utilization"};
         var diskGaugeLayout = { title: "Disk Utilization" };
         
         Plotly.newPlot('cpu-gauge', [cpuGauge], cpuGaugeLayout);
