@@ -1,0 +1,29 @@
+.terminal {
+    width: 80%;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: monospace;
+    background-color: #222;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .terminal-header {
+    background-color: #4e4a4a;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: aqua;
+  }
+  
+  .terminal-body {
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 300px;
+  }
+  
+  .terminal-body div {
+    margin-bottom: 5px;
+  }
+  
+  

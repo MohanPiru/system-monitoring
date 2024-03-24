@@ -18,12 +18,15 @@
 <body>
     <h1>System Monitoring</h1>
     
-    <div style="text-align: right;">
-        <a  href="http://www.linkedin.com/in/pirumohan-mandal-556668222" target="_main">
+    <div style="text-align: right;" >
+        <a href="running" target="_blank">
+            <button style="background-color: aqua; border-radius: 5px;">Processes</button>
+        </a>
+        <a href="http://www.linkedin.com/in/pirumohan-mandal-556668222" target="_blank">
             <button style="background-color: aqua; border-radius: 5px;">Contact</button>
         </a>
     </div>
-        
+
     <div id="cpu-gauge" style="margin-right: 17px;"></div>
     <div id="mem-gauge"></div>
     <div id="disk-gauge"></div>
@@ -127,6 +130,7 @@
                 }
             }
         };
+        
         
         var cpuGaugeLayout = { title: "CPU Utilization"};
         var memGaugeLayout = { title: "Memory Utilization"};

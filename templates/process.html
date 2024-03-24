@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Process Information</title>
+    <link href="{{ url_for('static', filename='css/terminal.css') }}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">Terminal : Running Processes</div>
+        <div class="terminal-body" id="terminal-output"></div>
+    </div>
+
+    <script>
+        async function fetchProcessInfo() {
+            const response = await fetch('/get_process_info');
+            const data = await response.json();
+            return data.process_info;
+        }
+
+        async function displayProcessInfo() {
+            const terminalOutput = document.getElementById('terminal-output');
+            terminalOutput.innerHTML = '';
+
+            const processInfo = await fetchProcessInfo();
+            processInfo.forEach(process => {
+                const processLine = document.createElement('div');
+                processLine.textContent = `_______________ Process  ID: ${process.pid}, _______________ Name: ${process.name}`;
+                terminalOutput.appendChild(processLine);
+            });
+        }
+
+        // Call the function when the page loads
+        displayProcessInfo();
+    </script>
+</body>
+</html>
